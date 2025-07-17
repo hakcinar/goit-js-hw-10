@@ -10,9 +10,9 @@ form.addEventListener('submit', event => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (data.state === 'fulfilled') {
-        resolve('Form submitted successfully!');
+        resolve(`Form submitted in ${data.delay} ms successfully!`);
       } else {
-        reject('Form submission failed!');
+        reject(`Form submission failed in ${data.delay}ms!`);
       }
     }, data.delay);
   });

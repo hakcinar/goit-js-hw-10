@@ -64,7 +64,12 @@ startButton.addEventListener('click', () => {
     const timeLeft = selectedDate - now;
     if (timeLeft <= 0) {
       clearInterval(timerId);
-      alert('Time is up!');
+      iziToast.success({
+        title: 'Success',
+        message: 'Time is Up!',
+        position: 'topRight',
+        timeout: 3000,
+      });
       dateInput.disabled = false; // Re-enable input
       return;
     }
